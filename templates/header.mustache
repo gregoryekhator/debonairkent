@@ -1,0 +1,88 @@
+{{!
+	This file is part of Moodle - http://moodle.org/
+
+	Moodle is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	Moodle is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+	Page header.
+}}
+<style media="screen">
+
+h1,
+p,
+a{
+margin: 0;
+padding: 0;
+font-family: 'Lato';
+}
+
+h1 {
+text-align: center;
+font-size: 2.8em;
+padding: 10px 0;
+font-weight: 800;
+color: #05345C;
+
+}
+
+#show_bg_2 {
+    margin-top: 0px;
+    margin-bottom: -70px;
+    background-image:
+    url('http://localhost/theme/kent/templates/theme_boost/images/building8.jpg');
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+.carousel-content {
+  display: none;
+}
+.carousel-item active{
+  display: none;
+}
+element {
+  background-image: url(//localhost/pluginfile.php/1/theme_university/slide1image/1652955167/slide1image.jpg);
+  display: none;
+}
+</style>
+{{>theme_university/navbar}}
+
+<div class="header-main" style="background-color:white!important;">
+  <div class="container-fluid">
+	<nav class="navbar navbar-toggleable-md">
+    <div id='show_bg_2'>
+      <h1>.</h1>
+      <a href="https://www.kent.ac.uk/student" class="button" target="_blank"><h1>Mentoring Platform</h1></a>
+
+    </div>
+
+		<button class="{{{customclass}}}" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <div class="custom-menu">
+			<ul class="navbar-nav mr-auto">
+			  {{{output.custom_menu}}}
+			</ul>
+		  </div>
+		  <div class="clearfix"></div>
+		</div>
+	</nav>
+  </div>
+</div>
+
+<!--E.O.Header-->
