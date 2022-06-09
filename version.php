@@ -21,15 +21,15 @@
  * Moodle's new Boost theme engine
  *
  * @package     theme_university
- * @copyright   2015 LMSACE Dev Team, lmsace.com
- * @author      LMSACE Dev Team
+ * @copyright   2022 Debonair Training, debonairtraining.com
+ * @author      Debonair Training from LMSACE Dev Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
 // The current module version (Date: YYYYMMDDXX).
-$plugin->version   = 2022051903;
+$plugin->version   = 2022060402;
 
 
 // Version maturity level.

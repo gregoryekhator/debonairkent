@@ -41,4 +41,14 @@
             }
         }, 200);
     });
+    $(document).ready(function(e){
+    const arrColor = ['red','green','blue','yellow'];
+
+    const elements = document.querySelectorAll('div.rcthumb');
+
+    elements.forEach(
+      function(el, in) {
+        el.style.color = arrColor[in];
+      });
+    });
 })(jQuery);

@@ -89,8 +89,8 @@
             {{$closebuttontext}}{{#str}}closeblockdrawer, core{{/str}}{{/closebuttontext}}
         {{/ theme_boost/drawer}}
     {{/hasblocks}}
-    {{#promotedcourses}} {{{promotedcourses}}} {{/promotedcourses}}
     {{#marketingspot}} {{{marketingspot}}} {{/marketingspot}}
+    {{#promotedcourses}} {{{promotedcourses}}} {{/promotedcourses}}
     {{#slideshow}} {{{slideshow}}} {{/slideshow}}
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-right{{/blockdraweropen}} drag-container">
         <div id="topofscroll" class="main-inner">
@@ -130,6 +130,7 @@
                 {{/hasblocks}}
             </div>
             {{{ output.full_header }}}
+            {{> theme_university/banner }}
             {{#secondarymoremenu}}
                 <div class="secondary-navigation d-print-none">
                     {{> core/moremenu}}

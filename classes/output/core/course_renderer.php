@@ -118,6 +118,7 @@ class course_renderer extends \core_course_renderer {
         $coursehtml = $header.$content.$footer;
         $output .= $coursehtml;
 
+      //  $output .= $this->output->render_from_template('theme_university/search', (object)[]);
         if (!$totalcount && !$this->page->user_is_editing() && has_capability('moodle/course:create', context_system::instance())) {
             // Print link to create a new course, for the 1st available category.
             $output .= $this->add_new_course_button();
@@ -209,6 +210,79 @@ class course_renderer extends \core_course_renderer {
          // Coursebox.
         $content .= html_writer::end_tag('div');
         return $content;
+    }
+
+    /**
+     * Outputs contents for frontpage as configured in $CFG->frontpage or $CFG->frontpageloggedin
+     *
+     * @return string
+     */
+    public function frontpage() {
+        global $CFG, $SITE;
+        require_once($CFG->dirroot. "/theme/university/layout/includes/marketingspots.php");
+        $output = '';
+        //$output .= $this->box($this->course_search_form(''), 'd-flex justify-content-center');
+        $output .= $this->output->render_from_template('theme_university/search', (object)[]);
+        $output .= $this->output->render_from_template('theme_university/others', (object)[]);
+        $output .= $this->output->render_from_template('theme_university/marketing', (object)[]);
+        //$output .= university_marketingspot();
+        $output .= $this->output->render_from_template('theme_university/video', (object)[]);
+        $output .= $this->promoted_courses();
+
+        if (isloggedin() and !isguestuser() and isset($CFG->frontpageloggedin)) {
+            $frontpagelayout = $CFG->frontpageloggedin;
+        } else {
+            $frontpagelayout = $CFG->frontpage;
+        }
+
+        foreach (explode(',', $frontpagelayout) as $v) {
+            switch ($v) {
+                // Display the main part of the front page.
+                case FRONTPAGENEWS:
+                    if ($SITE->newsitems) {
+                        // Print forums only when needed.
+                        require_once($CFG->dirroot .'/mod/forum/lib.php');
+                        if (($newsforum = forum_get_course_forum($SITE->id, 'news')) &&
+                                ($forumcontents = $this->frontpage_news($newsforum))) {
+                            $newsforumcm = get_fast_modinfo($SITE)->instances['forum'][$newsforum->id];
+                            $output .= $this->frontpage_part('skipsitenews', 'site-news-forum',
+                                $newsforumcm->get_formatted_name(), $forumcontents);
+                        }
+                    }
+                    break;
+
+                case FRONTPAGEENROLLEDCOURSELIST:
+                    $mycourseshtml = $this->frontpage_my_courses();
+                    if (!empty($mycourseshtml)) {
+                        $output .= $this->frontpage_part('skipmycourses', 'frontpage-course-list',
+                            get_string('mycourses'), $mycourseshtml);
+                    }
+                    break;
+
+                case FRONTPAGEALLCOURSELIST:
+                    $availablecourseshtml = $this->frontpage_available_courses();
+                    $output .= $this->frontpage_part('skipavailablecourses', 'frontpage-available-course-list',
+                       '', $availablecourseshtml);
+                    break;
+
+                case FRONTPAGECATEGORYNAMES:
+                    $output .= $this->frontpage_part('skipcategories', 'frontpage-category-names',
+                        get_string('categories'), $this->frontpage_categories_list());
+                    break;
+
+                case FRONTPAGECATEGORYCOMBO:
+                    $output .= $this->frontpage_part('skipcourses', 'frontpage-category-combo',
+                        get_string('courses'), $this->frontpage_combo_list());
+                    break;
+
+                case FRONTPAGECOURSESEARCH:
+                    //$output .= $this->box($this->course_search_form(''), 'd-flex justify-content-center');
+                    break;
+
+            }
+            $output .= '<br />';
+        }
+        return $output;
     }
 
     /**
@@ -308,72 +382,6 @@ class course_renderer extends \core_course_renderer {
         $template['promotedtitle'] = $promotedtitle;
         return $this->output->render_from_template("theme_university/courseblocks", $template);
     }
-    
-    /**
-     * Outputs contents for frontpage as configured in $CFG->frontpage or $CFG->frontpageloggedin
-     *
-     * @return string
-     */
-    public function frontpage() {
-        global $CFG, $SITE;
-        require_once($CFG->dirroot. "/theme/university/layout/includes/marketingspots.php");
-        $output = '';
-        $output .= $this->promoted_courses();
-        $output .= university_marketingspot();
 
-        if (isloggedin() and !isguestuser() and isset($CFG->frontpageloggedin)) {
-            $frontpagelayout = $CFG->frontpageloggedin;
-        } else {
-            $frontpagelayout = $CFG->frontpage;
-        }
 
-        foreach (explode(',', $frontpagelayout) as $v) {
-            switch ($v) {
-                // Display the main part of the front page.
-                case FRONTPAGENEWS:
-                    if ($SITE->newsitems) {
-                        // Print forums only when needed.
-                        require_once($CFG->dirroot .'/mod/forum/lib.php');
-                        if (($newsforum = forum_get_course_forum($SITE->id, 'news')) &&
-                                ($forumcontents = $this->frontpage_news($newsforum))) {
-                            $newsforumcm = get_fast_modinfo($SITE)->instances['forum'][$newsforum->id];
-                            $output .= $this->frontpage_part('skipsitenews', 'site-news-forum',
-                                $newsforumcm->get_formatted_name(), $forumcontents);
-                        }
-                    }
-                    break;
-
-                case FRONTPAGEENROLLEDCOURSELIST:
-                    $mycourseshtml = $this->frontpage_my_courses();
-                    if (!empty($mycourseshtml)) {
-                        $output .= $this->frontpage_part('skipmycourses', 'frontpage-course-list',
-                            get_string('mycourses'), $mycourseshtml);
-                    }
-                    break;
-
-                case FRONTPAGEALLCOURSELIST:
-                    $availablecourseshtml = $this->frontpage_available_courses();
-                    $output .= $this->frontpage_part('skipavailablecourses', 'frontpage-available-course-list',
-                       '', $availablecourseshtml);
-                    break;
-
-                case FRONTPAGECATEGORYNAMES:
-                    $output .= $this->frontpage_part('skipcategories', 'frontpage-category-names',
-                        get_string('categories'), $this->frontpage_categories_list());
-                    break;
-
-                case FRONTPAGECATEGORYCOMBO:
-                    $output .= $this->frontpage_part('skipcourses', 'frontpage-category-combo',
-                        get_string('courses'), $this->frontpage_combo_list());
-                    break;
-
-                case FRONTPAGECOURSESEARCH:
-                    $output .= $this->box($this->course_search_form(''), 'd-flex justify-content-center');
-                    break;
-
-            }
-            $output .= '<br />';
-        }
-        return $output;
-    }
 }

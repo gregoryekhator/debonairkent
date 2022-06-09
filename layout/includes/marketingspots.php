@@ -55,22 +55,22 @@ function university_marketingspot() {
 
     switch ($msp) {
         case 4:
-            $class = 'col-md-3';
+            $class = 'col-md-3 abbas';
             break;
         case 3:
-            $class = 'col-md-4';
+            $class = 'col-md-4 abbas';
             break;
         case 2:
-            $class = 'col-md-6';
+            $class = 'col-md-6 abbas';
             break;
         case 1:
-            $class = 'col-md-12';
+            $class = 'col-md-12 abbas';
             break;
         case 0:
-            $class = 'col-md-0';
+            $class = 'col-md-0 abbas';
             break;
         default:
-            $class = 'col-md-3';
+            $class = 'col-md-3 abbas';
             break;
     }
 

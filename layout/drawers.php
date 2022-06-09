@@ -18,8 +18,8 @@
  * A drawer based layout for the boost theme.
  *
  * @package   theme_university
- * @copyright 2015 onwards lmsace
- * @author    LMSACE Dev Team
+ * @copyright   2022 Debonair Training, debonairtraining.com
+ * @author      Debonair Training from LMSACE Dev Team
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

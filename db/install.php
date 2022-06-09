@@ -38,7 +38,7 @@ function xmldb_theme_university_install() {
     $fs = get_file_storage();
 
     // Slider images.
-        /*$i = 1;
+        $i = 1;
         $fs = get_file_storage();
         $filerecord = new stdClass();
         $filerecord->component = 'theme_university';
@@ -48,5 +48,5 @@ function xmldb_theme_university_install() {
         $filerecord->filepath = '/';
         $filerecord->itemid = 0;
         $filerecord->filename = 'slide1imagedd.jpg';
-        $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/university/pix/home/slide1hh.jpg');*/
+        $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/university/pix/home/slide1hh.jpg');
 }

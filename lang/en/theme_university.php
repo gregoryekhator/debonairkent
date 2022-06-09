@@ -30,7 +30,7 @@ $string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot">
 <img class=img-polaroid src="university/pix/screenshot.jpg" />
 <h3>Theme Credits</h3>
 <p>
-<h3>Moodle University theme</h3>
+<h3>Kent University theme</h3>
 <p> This theme is based on the Boost based Moodle theme. </p>
 <p>Authors: Debonair Training Team<br>
 Contact: info@debonairtraining.com<br>
@@ -40,16 +40,14 @@ $string['connectus'] = 'Connect with us';
 $string['contact'] = 'Contact';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
-$string['defaultaddress'] = '308 Negra Narrow Lane, Albeeze, New york, 87104';
-$string['defaultemailid'] = 'info@example.com';
-$string['defaultphoneno'] = '(000) 123-456';
+$string['defaultaddress'] = '';
+$string['defaultemailid'] = '';
+$string['defaultphoneno'] = '';
 $string['emailid'] = 'Email';
 $string['fburl'] = 'Facebook';
 $string['fburl_default'] = 'https://www.facebook.com/yourfacebookid';
 $string['fburldesc'] = 'The Facebook url of your organisation.';
-$string['pcourses'] = 'Promoted Courses';
-$string['pcoursesdesc'] = 'Please give the promoted courses id should separated by comma.';
-$string['promotedcoursesheading'] = 'Promoted Courses';
+
 $string['footbgimg'] = 'Background Image';
 $string['footbgimgdesc'] = 'Background Image size should be following size 1345 X 517';
 $string['footerheading'] = 'Footer Blocks';
@@ -133,10 +131,6 @@ $string['mediaicon3'] = 'fa-google-plus';
 $string['mediaicon4'] = 'fa-pinterest-p';
 $string['default_color'] = 'Default color scheme';
 $string['color_schemes_heading'] = 'Color Schemes';
-$string['promotedtitledefault'] = 'Promoted courses';
-$string['promotedtitledesc'] = 'Please give the Promoted courses block title,
-either language key or Text.For ex: lang:display or Display';
-$string['pcourseenable'] = 'Enable Promoted courses';
 $string['login'] = 'Login';
 $string['link'] = 'Link';
 $string['text'] = 'Text';
@@ -157,7 +151,13 @@ $string['mspot3descdefault'] = 'This is Photoshop\'s version  of Lorem Ipsum. Pr
 $string['mspot4titledefault'] = 'Personal Effectiveness';
 $string['mspot4descdefault'] = 'This is Photoshop\'s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.';
 $string['faicondesc'] = 'Enter the name of the icon you wish to use.  List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>. Just enter what is after the "fa-".';
-
+$string['promotedtitledefault'] = 'Featured courses';
+$string['promotedtitledesc'] = 'Please give the Promoted courses block title,
+either language key or Text.For ex: lang:display or Display';
+$string['pcourseenable'] = 'Enable Featured courses';
+$string['pcourses'] = 'Featured Courses';
+$string['pcoursesdesc'] = 'Please give the promoted courses id should separated by comma.';
+$string['promotedcoursesheading'] = 'Featured Courses';
 
 $string['termsofuse'] = 'Terms of use';
 $string['faq'] = 'FAQ';
