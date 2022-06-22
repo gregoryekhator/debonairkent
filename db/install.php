@@ -38,15 +38,15 @@ function xmldb_theme_university_install() {
     $fs = get_file_storage();
 
     // Slider images.
-        $i = 1;
-        $fs = get_file_storage();
-        $filerecord = new stdClass();
-        $filerecord->component = 'theme_university';
-        $filerecord->contextid = context_system::instance()->id;
-        $filerecord->userid = get_admin()->id;
-        $filerecord->filearea = 'slide1image';
-        $filerecord->filepath = '/';
-        $filerecord->itemid = 0;
-        $filerecord->filename = 'slide1imagedd.jpg';
-        $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/university/pix/home/slide1hh.jpg');
+        // $i = 1;
+        // $fs = get_file_storage();
+        // $filerecord = new stdClass();
+        // $filerecord->component = 'theme_university';
+        // $filerecord->contextid = context_system::instance()->id;
+        // $filerecord->userid = get_admin()->id;
+        // $filerecord->filearea = 'slide1image';
+        // $filerecord->filepath = '/';
+        // $filerecord->itemid = 0;
+        // $filerecord->filename = 'slide1imagedd.jpg';
+        // $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/university/pix/home/slide1hh.jpg');
 }

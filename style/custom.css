@@ -45,3 +45,42 @@ img {
     border: 10px;
     border-color: blue !important;
 }
+.course-section-header {
+    background-color: #bd262b !important;	
+    border-radius: 10px;
+}
+
+.course-content .topics h3 {
+    font-size: 21px;
+    color: white;
+}
+
+#coursecontentsection0 {
+    color: #ffffff;
+}
+
+.course-section-header d-flex {
+    background-color: white !important;
+}
+
+#coursecontentcollapse0 {
+  list-style: none;
+  padding: .25rem 0;
+    padding-bottom: 0.25rem;
+  background-image: url("http://localhost/theme/university/images/d.jpeg");
+  background-color: #cccccc;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.atto_image_button_text-top.img-fluid, .atto_image_button_middle.img-fluid, .atto_image_button_text-bottom.img-fluid {
+    display: inline-block;
+    max-width: calc(100% - 1em);
+    border-radius: 10px;
+}
+
+
+
+.course-section-header d-flex {
+    background-color: white !important;
+}
