@@ -5582,3 +5582,11 @@ p{
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
+
+table{
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 5px 5px var(--black_20);
+  border: 4px!important;
+  text-align: justify;
+}
