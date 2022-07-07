@@ -55,12 +55,12 @@ $record=$DB->get_records_sql("select * from {course_modules} where course=$id");
 $percentage = 0;
 //manipulate the completion percentage
 if ($percentage != null) {
-            $percentage = $percentage;
-        } else {
-            if (!empty($total)) {
-                $percentage = floor(100 * ($value / $total));
-            }
-        }
+      $percentage = $percentage;
+  } else {
+      if (!empty($total)) {
+          $percentage = floor(100 * ($value / $total));
+    }
+  }
 
 
 
