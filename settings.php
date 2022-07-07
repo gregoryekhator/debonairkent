@@ -21,8 +21,8 @@
  * Moodle's new Boost theme engine
  *
  * @package     theme_university
- * @copyright   2015 LMSACE Dev Team, lmsace.com
- * @author      LMSACE Dev Team
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die;
@@ -43,6 +43,14 @@ if (is_siteadmin()) {
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
+
+    // // Logo file setting.
+    // $name = 'theme_university/color';
+    // $title = get_string('color', 'theme_university');
+    // $description = get_string('colordesc', 'theme_university');
+    // $setting = new admin_setting_configstoredfile($name, $title, $description, 'color');
+    // $setting->set_updatedcallback('theme_reset_all_caches');
+    // $temp->add($setting);
 
     // Custom CSS file.
     $name = 'theme_university/customcss';

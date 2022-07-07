@@ -16,11 +16,12 @@
 
 /**
  * Theme Installation.
- * @package    theme_university
- * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
- * @author    LMSACE Dev Team
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_university
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 
 /**
  * Theme_university install function.

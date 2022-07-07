@@ -21,10 +21,9 @@
  * Moodle's new Boost theme engine
  *
  * @package     theme_university
- * @copyright   2015 LMSACE Dev Team, lmsace.com
- * @author      LMSACE Dev Team
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -87,7 +86,7 @@ $THEME->layouts = [
     ),
     // Main course page.
     'course' => array(
-        'file' => 'drawers.php',
+        'file' => 'course.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true),

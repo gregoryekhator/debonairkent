@@ -17,10 +17,10 @@
 /**
  * A drawer based layout for the boost theme.
  *
- * @package   theme_university
- * @copyright   2022 Debonair Training, debonairtraining.com
- * @author      Debonair Training from LMSACE Dev Team
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_university
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();

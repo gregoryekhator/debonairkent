@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900);
 :root {
   --color_primary: #05345C;
   --color_secondary: #05345C;
@@ -5464,7 +5465,16 @@ form#coursesearch {
     background-size: cover;
     color: white;
 }
-
+#background {
+    margin-bottom: -5px;
+    margin-top: -25px!important;
+    background-image:
+    url('http://localhost/theme/university/images/d.jpeg');
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    color: white;
+}
 .Promoted-Courses{
   border: 5px;
   border-color: red;
@@ -5478,7 +5488,36 @@ form#coursesearch {
 }
 
 /* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row-x {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row-y {
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+.row-sm-x {
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+
+.row-sm-y {
+    margin-top: -7.5px;
+    margin-bottom: -7.5px;
+}
+.position-relative {
+    position: relative !important;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -5525,9 +5564,6 @@ form#coursesearch {
   border-radius: 10px;
   padding-bottom: 20px;
 }
-p{
-  padding: 10px;
-}
 #ab{
   background-color: #6dc7f9;
   color: white;
@@ -5536,7 +5572,10 @@ p{
   height: 150px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  letter-spacing:0px;
 }
+
+
 #ab1{
   background-color: #05345C;
   color: white;
@@ -5545,6 +5584,7 @@ p{
   height: 150px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  letter-spacing:0px;
 }
 #ab2{
   background-color: #345235;
@@ -5554,6 +5594,7 @@ p{
   height: 150px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  letter-spacing:0px;
 }
 #ab3{
   background-color: #f9d16d;
@@ -5563,6 +5604,7 @@ p{
   height: 150px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  letter-spacing:0px;
 }
 #ab4{
   background-color: #ee8713;
@@ -5572,6 +5614,7 @@ p{
   height: 150px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  letter-spacing:0px;
 }
 #ab5{
   background-color: #5E2750;
@@ -5581,12 +5624,83 @@ p{
   height: 150px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
+  letter-spacing:0px;
 }
 
 table{
-  color: white;
   border-radius: 10px;
   box-shadow: 2px 5px 5px var(--black_20);
   border: 4px!important;
   text-align: justify;
+}
+
+.btn-bgstroke {
+font-size: 20px;
+display: inline-block;
+border: 1px solid white;
+padding: 10px 20px;
+border-radius: 10px;
+cursor: pointer;
+font-weight: 300;
+margin-top: 30px;
+}
+
+.btn-bgstroke:hover {
+background-color: white;
+color: #33cccc;
+}
+
+.testing {
+    background: #ac2020;
+    height: 350px;
+    margin-left: 300px;
+    width: 650px;
+    color: white!important;
+    opacity: 0.9;
+    border-radius: 15px;
+    text-align: left;
+    padding: 10px;
+}
+
+.heading {
+width: 100%;
+padding:60px 0;
+text-align: center;
+background-image:
+url('http://localhost/theme/university/images/d.jpeg');
+color: white;
+}
+
+.featured-courses-wrap .learningitem {
+    word-break: break-word;
+}
+
+.featured-courses-wrap .learningitem .detail-inner {
+    transition: all 0.2s ease;
+}
+
+.featured-courses-wrap .learningitem .detail-inner:focus, .featured-courses-wrap .learningitem .detail-inner:hover {
+    background-color: #fff !important;
+    transform: scale(1.02);
+    transform: translateY(-0.5rem);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.featured-courses-wrap .learningitem .detail-image {
+    width: 100%;
+    height: 140px;
+}
+
+.featured-courses-wrap .learningitem .detail-inner .courseprogress .progress {
+    height: 0.5rem;
+}
+
+.featured-courses-wrap .learningitem .detail-inner .courseprogress .progress .progress-bar {
+    background-image: none;
+}
+
+.para {
+font-size: 1.1em;
+font-weight: 100;
+letter-spacing: 5px;
 }

@@ -21,10 +21,11 @@
  * Moodle's new Boost theme engine
  *
  * @package     theme_university
- * @copyright   2015 LMSACE Dev Team, lmsace.com
- * @author      LMSACE Dev Team
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 
 namespace theme_university\output;
 
@@ -35,13 +36,15 @@ use stdClass;
 use core_course_category;
 use context_course;
 use core_course_list_element;
-
+use \theme_university\classes\local\util;
 /**
  * This class has function for core course renderer
- * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
- * @author    LMSACE Dev Team
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_university
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class core_renderer extends \theme_boost\output\core_renderer {
 
     /**
@@ -306,5 +309,55 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $featuredcourses;
     }
 
+    protected function completionbar($course) {
+        global $CFG, $USER;
+        require_once($CFG->libdir.'/completionlib.php');
 
+        $info = new completion_info($course);
+        $completions = $info->get_completions($USER->id);
+
+        // Check if this course has any criteria.
+        if (empty($completions)) {
+            return array('', '');
+        }
+
+        $progressbar = '';
+        $activityinfo = '';
+        // Check this user is enroled.
+        if ($info->is_tracked_user($USER->id)) {
+            // For aggregating activity completion.
+            $activities = array();
+            $activities_complete = 0;
+
+            // Loop through course criteria.
+            foreach ($completions as $completion) {
+                $criteria = $completion->get_criteria();
+                $complete = $completion->is_complete();
+
+                if ($criteria->criteriatype == COMPLETION_CRITERIA_TYPE_ACTIVITY) {
+                    $activities[$criteria->moduleinstance] = $complete;
+                    if ($complete) {
+                        $activities_complete++;
+                    }
+                }
+            }
+
+            // Aggregate activities.
+            if (!empty($activities)) {
+                $per = floor(100 * ($activities_complete / count($activities)));
+                $progressbar = html_writer::start_tag('div', array('class'=>'progressinfo clearfix'));
+                $progressbar .= html_writer::tag('div', get_string('progress', 'tool_lp'), array('class'=>'float-left progresstitle'));
+                $progressbar .= html_writer::tag('div', $per.'%', array('class'=>'float-right'));
+                $progressbar .= html_writer::end_tag('div');
+                $bar = html_writer::tag('div', '', array('class'=>'progress-bar-animated progress-bar bg-success', 'aria-valuemin'=>0, 'aria-valuemax'=>100, 'aria-valuenow'=>$per, 'style'=>"width: $per%"));
+                $progressbar .= html_writer::tag('div', $bar, array('class'=>'progress'));
+
+                $activity = new stdClass();
+                $activity->total = count($activities);
+                $activity->complete = $activities_complete;
+                $activityinfo = get_string('activityoutof', 'theme_university', $activity);
+            }
+        }
+        return array($progressbar, $activityinfo);
+    }
 }

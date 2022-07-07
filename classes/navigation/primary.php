@@ -28,10 +28,11 @@ use custom_menu;
  * usermenu into a standardized format for the frontend
  *
  * @package     theme_university
- * @category    navigation
- * @copyright   2015 onwards Lmsace Team
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class primary extends \core\navigation\output\primary {
 
     /** @var moodle_page $page the moodle page that the navigation belongs to */

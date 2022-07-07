@@ -17,9 +17,10 @@
 /**
  * Strings for component 'theme_university', language 'en'
  *
- * @package   theme_university
- * @copyright 2022 LMSACE Dev Team, lmsace.com
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_university
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['about'] = 'About';
@@ -64,7 +65,10 @@ $string['gpurl_default'] = 'https://www.google.com/+yourgoogleplusid';
 $string['gpurldesc'] = 'The Google+ url of your organisation.';
 $string['headerheading'] = 'Header';
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
+$string['color'] = 'Colors';
+$string['colordesc'] = 'Please upload your custom logo here if you want to add it to the header.
+                       <br>The image should be 50px high and any reasonable width (minimum:235px) that suits.';
+$string['logodesc'] = 'Please upload your custom color here if you want to add it to the header.
                        <br>The image should be 50px high and any reasonable width (minimum:235px) that suits.';
 $string['numberofslides'] = 'Number of slides';
 $string['numberofslides_desc'] = 'Number of slides on the slider.';
@@ -76,7 +80,13 @@ $string['pinurl_default'] = 'https://in.pinterest.com/yourpinterestname/';
 $string['pinurldesc'] = 'The Pinterest url of your organisation.';
 $string['knowmore'] = 'Know More';
 $string['region-side-post'] = 'Right';
+$string['settingsinfo'] = 'Imported {$a->settingcount} theme settings, {$a->filecount} theme files';
+$string['lastaccessed'] = 'Last accessed {$a}';
 $string['region-side-pre'] = 'Left';
+$string['nosettingstoimport'] = 'No settings to import';
+$string['activityoutof'] = '<strong>{$a->complete}</strong> of <strong>{$a->total}</strong> activities completed';
+$string['importsettingsinvalidfile'] = 'The uploaded file does not seem to be valid';
+$string['importsettingsmismatch'] = 'Uploaded settings are from another theme: {$a}';
 $string['signup'] = 'Sign up';
 $string['slidecaption'] = 'Slide caption';
 $string['slidecaptiondefault'] = 'Moodle Learning Management System';
@@ -100,6 +110,7 @@ $string['twurl'] = 'Twitter';
 $string['twurl_default'] = 'https://twitter.com/yourtwittername';
 $string['twurldesc'] = 'The Twitter url of your organisation.';
 $string['themegeneralsettings'] = 'General';
+$string['themecolorsettings'] = 'Color Picker';
 $string['patternselect'] = 'Site Color Scheme';
 $string['patternselectdesc'] = 'Select the color scheme you want to have for your site.';
 $string['colorscheme'] = 'Color Scheme';

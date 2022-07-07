@@ -21,10 +21,11 @@
  * Moodle's new Boost theme engine
  *
  * @package     theme_university
- * @copyright   2015 LMSACE Dev Team, lmsace.com
- * @author      LMSACE Dev Team
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 
 
 namespace theme_university\output\core;
@@ -40,10 +41,12 @@ use core_course_list_element;
 
 /**
  * This class has function for core course renderer
- * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
- * @author    LMSACE Dev Team
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_university
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class course_renderer extends \core_course_renderer {
 
     /**

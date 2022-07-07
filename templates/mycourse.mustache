@@ -1,0 +1,137 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+
+    @template theme_synergybase/featuredcourse
+
+    Context variables required for this template:
+    * url string URL to the course.
+    * image URL to the course image (or a default one).
+    * name string Name of the course.
+    * last_accessed string Text describing when the course was last accessed.
+    * course_name_class string Class suffix that determines the szie of the course name.
+    * progress_bar string HTML that creates the progress bar.
+
+    Example context (json):
+    {   "id":"2",
+        "name":"Course 1.1",
+        "category":"Cat 1",
+        "url":"http:\/\/ds.dev.sl.local\/development\/t12theme\/course\/view.php?id=2",
+        "summary":"This is an example course.",
+        "hascompletion":false,
+        "progressbar":"",
+        "activitytotal":0,
+        "activitycomplete":0,
+        "activitypercentage":0,
+        "image": 'https://source.unsplash.com/featured/',
+        "teachers": [
+            {
+            "src":"http:\/\/ds.dev.sl.local\/development\/t12theme\/theme\/image.php\/synergybase\/core\/1563122715\/u\/f2",
+            "name":"Teacher McTeach"
+            }
+        ],
+        "isenrolled": true
+    }
+
+}}
+<div class="learningitem-wrap col-12 col-sm-6 col-xl-4 d-flex position-relative mb-3 {{^islastaccessed}}order-1{{/islastaccessed}}{{#islastaccessed}}order-0{{/islastaccessed}}">
+    <div class="learningitem learningitem-grid d-flex p-0 w-100 flex-grow-1">
+        <div class="detail d-flex position-relative w-100 flex-grow-1">
+            <div class="detail-inner d-flex flex-column bg-light rounded-sm w-100 flex-grow-1 position-relative">
+                <div class="detail-image d-flex align-items-start position-relative sl-bg-img-cover rounded-top bg-primary" style="background-image: url('{{imageurl}}')">
+                    <a href="{{courseurl}}" class="w-100 h-100 d-block position-absolute bg-transparent"></a>
+
+                    {{#enddate}}
+                        <div class="enddate mt-2 bg-primary text-white py-1 px-2 flex-shrink-0 font-weight-bold small text-uppercase position-relative">
+                            {{#str}}due, theme_synergybase{{/str}} : {{enddate}}
+                        </div>
+                    {{/enddate}}
+
+                    <div class="badges-wrap d-flex flex-wrap align-items-start justify-content-end mt-n4 ml-auto p-2 position-relative">
+                        <div class="badges d-flex flex-wrap align-items-center justify-content-center">
+                            {{#badges}}
+                                <div class="badge-item m-1">
+                                    {{#url}}
+                                        <a href="{{{url}}}" class="badge-awarded d-block" data-toggle="tooltip" data-placement="bottom" title="{{name}}">
+                                            <img class="badge-image" src="{{imageurl}}" alt="{{name}}" style="width: 50px;">
+                                        </a>
+                                    {{/url}}
+                                    {{^url}}
+                                        <div class="badge-notawarded">
+                                            <div class="badge-image rounded-circle bg-light"></div>
+                                        </div>
+                                    {{/url}}
+                                </div>
+                            {{/badges}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upper d-flex flex-column flex-grow-1 p-3">
+                    <div class="upper-inner pb-3">
+                        <span class="m-0 font-weight-bold d-block mb-2">{{{fullname}}}</span>
+                        <div class="coursesummary">
+                            {{#shortentext}}150, {{{summary}}}{{/shortentext}}
+                        </div>
+                    </div>
+                    <div class="cta-wrap mt-auto">
+                        <a href="{{{courseurl}}}" class="btn btn-primary px-4">
+                            {{#iscomplete}}
+                                {{#str}}review, theme_synergybase{{/str}}
+                            {{/iscomplete}}
+                            {{^iscomplete}}
+                                {{#inprogress}}
+                                    {{#str}}resume, theme_synergybase{{/str}}
+                                {{/inprogress}}
+                                {{^inprogress}}
+                                    {{#str}}explore, theme_synergybase{{/str}}
+                                {{/inprogress}}
+                            {{/iscomplete}}
+                        </a>
+                    </div>
+                </div>
+
+                {{#courseuserinfo}}
+                    {{#hascompletion}}
+                    <div class="courseprogress d-flex flex-wrap align-items-center w-100 rounded-bottom overflow-hidden">
+                        <div class="courseprogress-inner w-100">
+                            <a href="#" class="progress position-relative bg-secondary w-100 border-0 rounded-0 shadow-none" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<b>{{completeactivities}}</b> of <b>{{totalactivities}}</b> items complete">
+                                <div class="progress-bar bg-primary text-center" role="progressbar" aria-valuenow="{{completeactivitiesperc}}" aria-valuemin="0" aria-valuemax="100" style="width: {{completeactivitiesperc}}%;">
+                                </div>
+                                <span class="sr-only">{{completeactivitiesperc}}% Complete</span>
+                            </a>
+                        </div>
+                    </div>
+                    {{/hascompletion}}
+                {{/courseuserinfo}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{#js}}
+require(['jquery', 'theme_boost/bootstrap/tooltip'], function($, tooltip) {
+
+    $('.learningitem-wrap [data-toggle=tooltip]').tooltip();
+
+    $('a[href="#"]').on('click', function(e) {
+        e.preventDefault();
+    });
+
+});
+{{/js}}

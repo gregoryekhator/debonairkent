@@ -17,11 +17,12 @@
 /**
  * Theme Config details
  *
- * @package    theme_university
- * @copyright  2015 LmsaceDev Team , lmsace.com
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
+ * @package     theme_university
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 namespace theme_university\privacy;
 
 /**

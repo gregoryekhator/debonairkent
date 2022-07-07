@@ -18,8 +18,8 @@
  * A login page layout for the boost theme.
  *
  * @package     theme_university
- * @copyright   2015 LMSACE Dev Team,lmsace.com
- * @author      LMSACE Dev Team
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

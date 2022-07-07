@@ -17,10 +17,10 @@
 /**
  * The one column layout.
  *
- * @package   theme_university
- * @copyright 2015 LMSACE Dev Team,lmsace.com
- * @author    LMSACE Dev Team
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_university
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();

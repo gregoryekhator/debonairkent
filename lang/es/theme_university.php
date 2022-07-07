@@ -17,9 +17,10 @@
 /**
  * Strings for component 'theme_university', language 'en'
  *
- * @package   theme_university
- * @copyright 2022 LMSACE Dev Team, lmsace.com
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     theme_university
+ * @copyright   2022 Debonair Training Ltd, debonairtraining.com
+ * @author      Debonair Dev Team
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['about'] = 'Acerca de';
